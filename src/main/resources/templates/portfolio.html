@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+<header class="bg-blue-600 text-white py-4">
+  <div class="max-w-6xl mx-auto px-4 flex items-center justify-between">
+    <div class="text-xl font-bold">TradeApp</div>
+    <nav class="space-x-4 text-sm">
+      <a href="/dashboard" class="hover:underline">Dashboard</a>
+      <a href="/account-info" class="hover:underline">Account Info</a>
+      <a href="/portfolio" class="hover:underline">View Portfolio</a>
+      <a href="/place-order" class="hover:underline">Place Order</a>
+      <a href="/trading-history" class="hover:underline">Trading History</a>
+      <a href="/trade-book" class="hover:underline">Trade Book</a>
+      <a href="/alerts/today" class="hover:underline">Alerts</a>
+      <a href="/scrip/search" class="hover:underline">Search Scrip</a>
+      <a href="/auth/logout" class="hover:underline">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="py-12">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="text-2xl font-semibold mb-4">Portfolio</h2>
+
+    <div th:if="${errorMessage}" class="bg-red-100 text-red-700 p-3 rounded mb-4" th:text="${errorMessage}"></div>
+
+    <div th:if="${holdings != null}" class="bg-white rounded shadow p-6 mb-6">
+      <h3 class="text-lg font-semibold mb-3">Summary</h3>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="text-sm text-gray-600">Total Holding Value</div>
+        <div class="font-medium" th:text="${holdings.data.totalholding.totalholdingvalue}">-</div>
+
+        <div class="text-sm text-gray-600">Total Investment</div>
+        <div class="font-medium" th:text="${holdings.data.totalholding.totalinvvalue}">-</div>
+
+        <div class="text-sm text-gray-600">Total PnL</div>
+        <div class="font-medium" th:text="${holdings.data.totalholding.totalprofitandloss}">-</div>
+
+        <div class="text-sm text-gray-600">Total PnL %</div>
+        <div class="font-medium" th:text="${holdings.data.totalholding.totalpnlpercentage}">-</div>
+      </div>
+    </div>
+
+    <div th:if="${holdings != null}" class="bg-white rounded shadow p-4 overflow-x-auto">
+      <h3 class="text-lg font-semibold mb-3">Holdings</h3>
+      <table class="min-w-full table-auto">
+        <thead class="bg-gray-100">
+        <tr>
+          <th class="px-4 py-2">Symbol</th>
+          <th class="px-4 py-2">Exchange</th>
+          <th class="px-4 py-2">Quantity</th>
+          <th class="px-4 py-2">Avg Price</th>
+          <th class="px-4 py-2">LTP</th>
+          <th class="px-4 py-2">PnL</th>
+          <th class="px-4 py-2">PnL %</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="h : ${holdings.data.holdings}" class="hover:bg-gray-50">
+          <td class="px-4 py-2" th:text="${h.tradingsymbol}">-</td>
+          <td class="px-4 py-2" th:text="${h.exchange}">-</td>
+          <td class="px-4 py-2" th:text="${h.quantity}">-</td>
+          <td class="px-4 py-2" th:text="${h.averageprice}">-</td>
+          <td class="px-4 py-2" th:text="${h.ltp}">-</td>
+          <td class="px-4 py-2" th:text="${h.profitandloss}">-</td>
+          <td class="px-4 py-2" th:text="${h.pnlpercentage}">-</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</main>
+</body>
+</html>

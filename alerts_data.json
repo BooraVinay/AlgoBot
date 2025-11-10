@@ -1,0 +1,85 @@
+[ {
+  "id" : "ee583c4f-3aa3-4760-8412-da67bc5cc49f",
+  "ticker" : "Tatamotors",
+  "exchange" : "NSE",
+  "interval" : "15",
+  "time" : "2025-10-11T15:56:34Z",
+  "action" : "BUY",
+  "quantity" : 1,
+  "status" : "FAILED",
+  "timestamp" : "2025-10-11T21:26:32.2349746",
+  "orderResult" : null,
+  "errorMessage" : "placeOrder failed: Access denied: Unregistered IP address. Register your IP before retrying.",
+  "rawPayload" : {
+    "ticker" : "Tatamotors",
+    "exchange" : "NSE",
+    "interval" : "15",
+    "time" : "2025-10-11T15:56:34Z",
+    "action" : "buy",
+    "qty" : 1
+  },
+  "symboltoken" : null
+}, {
+  "id" : "abab9c46-b0ce-4493-b508-97c48a362cc7",
+  "ticker" : "Tatamotors",
+  "exchange" : "NSE",
+  "interval" : "15",
+  "time" : "2025-10-11T15:56:25Z",
+  "action" : "SELL",
+  "quantity" : 1,
+  "status" : "REJECTED",
+  "timestamp" : "2025-10-11T21:26:23.1792814",
+  "orderResult" : null,
+  "errorMessage" : null,
+  "rawPayload" : {
+    "ticker" : "Tatamotors",
+    "exchange" : "NSE",
+    "interval" : "15",
+    "time" : "2025-10-11T15:56:25Z",
+    "action" : "sell",
+    "qty" : 1
+  },
+  "symboltoken" : null
+}, {
+  "id" : "fc692fb4-a351-42ff-9376-49906015bdf2",
+  "ticker" : "Tatamotors",
+  "exchange" : "NSE",
+  "interval" : "15",
+  "time" : "2025-10-11T15:56:19Z",
+  "action" : "BUY",
+  "quantity" : 1,
+  "status" : "REJECTED",
+  "timestamp" : "2025-10-11T21:26:17.4454094",
+  "orderResult" : null,
+  "errorMessage" : null,
+  "rawPayload" : {
+    "ticker" : "Tatamotors",
+    "exchange" : "NSE",
+    "interval" : "15",
+    "time" : "2025-10-11T15:56:19Z",
+    "action" : "buy",
+    "qty" : 1
+  },
+  "symboltoken" : null
+}, {
+  "id" : "10430723-383c-4929-99cb-a42eb7c43c8e",
+  "ticker" : "Tatamotors",
+  "exchange" : "NSE",
+  "interval" : "15",
+  "time" : "2025-10-11T15:55:38Z",
+  "action" : "SELL",
+  "quantity" : 1,
+  "status" : "FAILED",
+  "timestamp" : "2025-10-11T21:25:36.4722843",
+  "orderResult" : null,
+  "errorMessage" : "placeOrder failed: Access denied: Unregistered IP address. Register your IP before retrying.",
+  "rawPayload" : {
+    "ticker" : "Tatamotors",
+    "exchange" : "NSE",
+    "interval" : "15",
+    "time" : "2025-10-11T15:55:38Z",
+    "action" : "sell",
+    "qty" : 1
+  },
+  "symboltoken" : null
+} ]

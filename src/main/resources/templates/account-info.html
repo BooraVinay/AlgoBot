@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Account Info</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+<header class="bg-blue-600 text-white shadow">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="text-xl font-bold">TradeApp</div>
+    <nav class="space-x-4 text-sm">
+      <a href="/dashboard" class="hover:underline">Dashboard</a>
+      <a href="/account-info" class="hover:underline">Account Info</a>
+      <a href="/portfolio" class="hover:underline">View Portfolio</a>
+      <a href="/place-order" class="hover:underline">Place Order</a>
+      <a href="/trading-history" class="hover:underline">Trading History</a>
+      <a href="/trade-book" class="hover:underline">Trade Book</a>
+      <a href="/alerts/today" class="hover:underline">Alerts</a>
+      <a href="/scrip/search" class="hover:underline">Search Scrip</a>
+      <a href="/auth/logout" class="hover:underline">Logout</a>
+    </nav>
+  </div>
+</header>
+<main class="flex-grow flex items-start justify-center p-6">
+  <div class="w-full max-w-2xl bg-white shadow rounded p-6">
+    <h1 class="text-2xl font-bold mb-4 text-center">Account Info</h1>
+
+    <div class="space-y-2">
+      <p><strong>Client Code:</strong> <span th:text="${profile.clientcode}">-</span></p>
+      <p><strong>Name:</strong> <span th:text="${profile.name}">-</span></p>
+      <p><strong>Email:</strong> <span th:text="${profile.email != null && profile.email != '' ? profile.email : '-'}">-</span></p>
+      <p><strong>Mobile:</strong> <span th:text="${profile.mobileno != null && profile.mobileno != '' ? profile.mobileno : '-'}">-</span></p>
+      <p><strong>Exchanges:</strong> <span th:text="${profile.exchanges}">-</span></p>
+      <p><strong>Products:</strong> <span th:text="${profile.products}">-</span></p>
+    </div>
+
+    <div class="mt-6 border-t pt-4">
+      <h2 class="font-semibold mb-2 text-lg">Margins / RMS</h2>
+      <div th:if="${rms != null}" class="bg-gray-50 p-4 rounded border">
+        <p><strong>Available Cash:</strong> <span th:text="${rms.data.availablecash}">-</span></p>
+        <p><strong>Net:</strong> <span th:text="${rms.data.net}">-</span></p>
+      </div>
+      <div th:if="${rms == null}" class="text-gray-500">RMS data not available.</div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
